@@ -8,10 +8,10 @@ To run this application locally, use http://localhost:3000 after completing the 
   npm install
   npm start
 ## Technologies Used
-  React
-  JavaScript
-  MongoDB
-  Express
-  Node
-  Google Books API
-  Bootstrap
+  (1) React
+  (2) JavaScript
+  (3) MongoDB
+  (4) Express
+  (5) Node
+  (6) Google Books API
+  (7) Bootstrap
