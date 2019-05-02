@@ -1,9 +1,9 @@
-# Google-Books-Search               link: https://powerful-tor-87105.herokuapp.com/ 
-## Overview 
+# Google-Books-Search               
+## Overview                           link: https://powerful-tor-87105.herokuapp.com/ 
 ### A react based google book search app for book lovers to search for their favorite books, view them on the google books store, and save them to their library.
 ## Getting Started
 To run this application locally, use http://localhost:3000 after completing the following steps.
-  git clone 
+  git clone git@github.com:ruiligao/Google-Books-Search.git
   
   cd google-books-app
   
