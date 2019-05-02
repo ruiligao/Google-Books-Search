@@ -12,7 +12,7 @@ const PORT = process.env.PORT || 3001;
 //use midleware function for handling the post data, the data is the plain text, need transfer json objects
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-//for the production, set the satic file to "client/build"
+//for the production, set the static file to "client/build"
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
@@ -21,7 +21,7 @@ app.use(routes);
 //set the mongoose connect in the heroku required way 
 mongoose.connect(
   //if we're production env, use the URI provided by mlab, if not, googlebooks is the dbname local to our machines
-  process.env.MONGODB_URI || "mongodb://localhost/googlebooks",
+  process.env.MONGODB_URI || "mongodb://user:password0@ds151066.mlab.com:51066/heroku_tnq1wwws",
   {
     useCreateIndex: true,
     useNewUrlParser: true
