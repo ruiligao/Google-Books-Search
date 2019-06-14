@@ -1,6 +1,6 @@
 //import React and relative components
 import React, { Component } from "react";
-import Jumbotron from "../components/Jumbotron";
+import Hero from "../components/Hero";
 import Card from "../components/Card";
 import Book from "../components/Book";
 import Footer from "../components/Footer";
@@ -40,12 +40,12 @@ class Saved extends Component {
       <Container>
         <Row>
           <Col size="md-12">
-            <Jumbotron>
-              <h1 className="text-center">
-                <strong>(React) Google Books Search</strong>
-              </h1>
-              <h2 className="text-center">Search for and Save Books of Interest.</h2>
-            </Jumbotron>
+          <Hero backgroundImage="https://cache.desktopnexus.com/cropped-wallpapers/2175/2175713-1920x1080-[DesktopNexus.com].jpg?st=9t59p2hUES0veZd7m-c_6Q&e=1560488417">                      
+                  <h1 className="text-center">
+                    <strong>(React) Google Books Search</strong>
+                  </h1>
+                  <h2 className="text-center">Search for and Save Books of Interest.</h2>           
+              </Hero>
           </Col>
         </Row>
         <Row>

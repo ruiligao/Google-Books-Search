@@ -6,6 +6,7 @@ import Card from "../components/Card";
 import Form from "../components/Form";
 import Book from "../components/Book";
 import Footer from "../components/Footer";
+import Hero from "../components/Hero";
 import API from "../utils/API";
 import { Col, Row, Container } from "../components/Grid";
 import { List } from "../components/List";
@@ -18,7 +19,7 @@ class Home extends Component {
     q: "",
     message: "Search For A Book To Begin!"
   };
-//handleInputChange 
+  //handleInputChange 
   handleInputChange = event => {
     //deconstruction of event.tartget 
     const { name, value } = event.target;
@@ -27,16 +28,15 @@ class Home extends Component {
       [name]: value
     });
   };
-//getBooks is a function, which will define in API file and it will hit and pass the {q} as title to the api to google the books
+  //getBooks is a function, which will define in API file and it will hit and pass the {q} as title to the api to google the books
   getBooks = () => {
     // here catch the this.state.q as the search tilte passing to the route
     console.log(this.state.q)
     API.getBooks(this.state.q)
-    //after get back from api
-      .then(res =>
-        {
-          console.log(res.data);
-          console.log("+++++++++++++");
+      //after get back from api
+      .then(res => {
+        console.log(res.data);
+        console.log("+++++++++++++");
         //setState, books to the res.data
         this.setState({
           books: res.data
@@ -51,20 +51,20 @@ class Home extends Component {
         })
       );
   };
-//submit event listener 
+  //submit event listener 
   handleFormSubmit = event => {
-  
+
     event.preventDefault();
     //in this event, will hit the API, so here call this.getBooks function, which is define in API file 
     this.getBooks();
   };
-//handleBookSave event will pass the book id here 
+  //handleBookSave event will pass the book id here 
   handleBookSave = id => {
     //find the book in the books which id is the saved one
     //it can run the for loop to find that one 
     const book = this.state.books.find(book => book.id === id);
     console.log(id)
-//then run saveBook function from API, pass googleID, title... as bookData in API file
+    //then run saveBook function from API, pass googleID, title... as bookData in API file
     API.saveBook({
       googleId: book.id,
       title: book.volumeInfo.title,
@@ -81,12 +81,12 @@ class Home extends Component {
       <Container>
         <Row>
           <Col size="md-12">
-            <Jumbotron>
-              <h1 className="text-center">
-                <strong>(React) Google Books Search</strong>
-              </h1>
-              <h2 className="text-center">Search for and Save Books of Interest.</h2>
-            </Jumbotron>
+              <Hero backgroundImage="https://cache.desktopnexus.com/cropped-wallpapers/2175/2175713-1920x1080-[DesktopNexus.com].jpg?st=9t59p2hUES0veZd7m-c_6Q&e=1560488417">                      
+                  <h1 className="text-center">
+                    <strong>(React) Google Books Search</strong>
+                  </h1>
+                  <h2 className="text-center">Search for and Save Books of Interest.</h2>           
+              </Hero>
           </Col>
           <Col size="md-12">
             <Card title="Book Search" icon="far fa-book">
@@ -124,8 +124,8 @@ class Home extends Component {
                   ))}
                 </List>
               ) : (
-                <h2 className="text-center">{this.state.message}</h2>
-              )}
+                  <h2 className="text-center">{this.state.message}</h2>
+                )}
             </Card>
           </Col>
         </Row>
